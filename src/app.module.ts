@@ -3,6 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
+import { UserModule } from './user/user.module';
+import { QuizModule } from './quiz/quiz.module';
+import { QuestionModule } from './question/question.module';
+import { SubmissionModule } from './submission/submission.module';
 
 @Module({
   imports: [
@@ -27,6 +32,16 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         synchronize: true,
       }),
     }),
+
+    AuthModule,
+
+    UserModule,
+
+    QuizModule,
+
+    QuestionModule,
+
+    SubmissionModule,
   ],
   controllers: [AppController],
   providers: [AppService],
